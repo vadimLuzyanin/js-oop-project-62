@@ -1,7 +1,7 @@
 import { test, expect } from "@jest/globals";
 import Validator from "../index.js";
 
-test("string", () => {
+test("number", () => {
   const v = new Validator();
 
   const schema = v.number();
