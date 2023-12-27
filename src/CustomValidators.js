@@ -1,5 +1,7 @@
 export default class CustomValidators {
-  customValidators = new Map();
+  constructor() {
+    this.customValidators = new Map();
+  }
 
   addValidator(type, name, fn) {
     if (!this.customValidators.get(type)) {

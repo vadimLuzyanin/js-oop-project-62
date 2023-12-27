@@ -1,9 +1,8 @@
 export default class BaseSchema {
   constructor(customValidators) {
     this.customValidators = customValidators;
+    this.validatorChain = [];
   }
-
-  validatorChain = [];
 
   addValidator(fn) {
     this.validatorChain.push(fn);
