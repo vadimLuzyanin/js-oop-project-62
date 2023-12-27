@@ -13,7 +13,7 @@ export default class NumberSchema extends BaseSchema {
   }
 
   positive() {
-    this.addValidator((data) => data > 0);
+    this.addValidator((data) => !isDefined(data) || data > 0);
     return this;
   }
 
