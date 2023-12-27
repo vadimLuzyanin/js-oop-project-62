@@ -1,6 +1,8 @@
 import BaseSchema from "./BaseSchema.js";
 
 export default class ObjectSchema extends BaseSchema {
+  type = "object";
+
   shape(objectShape) {
     this.addValidator((data) => {
       const results = Object.entries(objectShape).reduce(
@@ -10,7 +12,6 @@ export default class ObjectSchema extends BaseSchema {
         }),
         {}
       );
-      console.log(results);
       return Object.values(results).every((value) => value === true);
     });
   }

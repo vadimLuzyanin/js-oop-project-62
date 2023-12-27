@@ -2,8 +2,10 @@ import isDefined from "../utils.js";
 import BaseSchema from "./BaseSchema.js";
 
 export default class ArraySchema extends BaseSchema {
-  constructor() {
-    super();
+  type = "array";
+
+  constructor(props) {
+    super(props);
     this.addValidator((data) => Array.isArray(data) || !isDefined(data));
   }
 

@@ -2,8 +2,10 @@ import isDefined from "../utils.js";
 import BaseSchema from "./BaseSchema.js";
 
 export default class StringSchema extends BaseSchema {
-  constructor() {
-    super();
+  type = "string";
+
+  constructor(props) {
+    super(props);
     this.addValidator((data) => typeof data === "string" || !isDefined(data));
   }
 
