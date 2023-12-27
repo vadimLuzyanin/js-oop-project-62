@@ -1,11 +1,10 @@
-import isDefined from "../utils.js";
-import BaseSchema from "./BaseSchema.js";
+import isDefined from '../utils.js';
+import BaseSchema from './BaseSchema.js';
 
 export default class ArraySchema extends BaseSchema {
-  type = "array";
-
   constructor(props) {
     super(props);
+    this.type = 'array';
     this.addValidator((data) => Array.isArray(data) || !isDefined(data));
   }
 

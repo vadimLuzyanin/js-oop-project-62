@@ -1,12 +1,11 @@
-import isDefined from "../utils.js";
-import BaseSchema from "./BaseSchema.js";
+import isDefined from '../utils.js';
+import BaseSchema from './BaseSchema.js';
 
 export default class NumberSchema extends BaseSchema {
-  type = "number";
-
   constructor(props) {
     super(props);
-    this.addValidator((data) => typeof data === "number" || !isDefined(data));
+    this.type = 'number';
+    this.addValidator((data) => typeof data === 'number' || !isDefined(data));
   }
 
   required() {

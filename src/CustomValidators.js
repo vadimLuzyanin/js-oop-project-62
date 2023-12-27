@@ -16,7 +16,7 @@ export default class CustomValidators {
     const validator = ofType.get(name);
     if (!validator) {
       throw new Error(
-        `custom validator for type "${type}" named "${name}" was not found`
+        `custom validator for type "${type}" named "${name}" was not found`,
       );
     }
     return validator;

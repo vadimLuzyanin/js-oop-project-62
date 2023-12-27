@@ -1,12 +1,13 @@
-/* eslint-disable class-methods-use-this */
-import CustomValidators from "./CustomValidators.js";
-import ArraySchema from "./schemas/ArraySchema.js";
-import NumberSchema from "./schemas/NumberSchema.js";
-import ObjectSchema from "./schemas/ObjectSchema.js";
-import StringSchema from "./schemas/StringSchema.js";
+import CustomValidators from './CustomValidators.js';
+import ArraySchema from './schemas/ArraySchema.js';
+import NumberSchema from './schemas/NumberSchema.js';
+import ObjectSchema from './schemas/ObjectSchema.js';
+import StringSchema from './schemas/StringSchema.js';
 
 export default class Validator {
-  customValidators = new CustomValidators();
+  constructor() {
+    this.customValidators = new CustomValidators();
+  }
 
   string() {
     return new StringSchema(this.customValidators);

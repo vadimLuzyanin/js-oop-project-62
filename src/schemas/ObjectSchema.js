@@ -1,7 +1,10 @@
-import BaseSchema from "./BaseSchema.js";
+import BaseSchema from './BaseSchema.js';
 
 export default class ObjectSchema extends BaseSchema {
-  type = "object";
+  constructor(props) {
+    super(props);
+    this.type = 'object';
+  }
 
   shape(objectShape) {
     this.addValidator((data) => {
@@ -10,7 +13,7 @@ export default class ObjectSchema extends BaseSchema {
           ...acc,
           [key]: validation.isValid(data[key]),
         }),
-        {}
+        {},
       );
       return Object.values(results).every((value) => value === true);
     });
