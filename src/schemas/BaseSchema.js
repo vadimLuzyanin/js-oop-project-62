@@ -7,7 +7,6 @@ export default class BaseSchema {
 
   isValid(data) {
     const res = this.validatorChain.every((fn) => fn(data));
-    console.log(res);
     return res;
   }
 }
